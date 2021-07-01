@@ -1,0 +1,12 @@
+detectors:
+  UtilityFunction:
+    exclude:
+      - 'options'
+  IrresponsibleModule:
+    exclude:
+      - 'LoginPage'
+      - 'InfPage'
+  TooManyStatements:
+    max_statements: 20
+  TooManyInstanceVariables:
+    max_instance_variables: 10
