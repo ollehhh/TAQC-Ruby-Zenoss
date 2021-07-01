@@ -27,7 +27,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install Dependencies
-        run: bundle install
+        run: |
+          gem install bundler
+          bundle install
 
       # Runs a single command using the runners shell
       - name: Run RuboCop
