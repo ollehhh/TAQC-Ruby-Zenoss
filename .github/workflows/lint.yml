@@ -40,4 +40,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run Reek
-        run: bundle exec reek .
+        run: bundle exec reek
