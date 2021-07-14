@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# This sections describe subcomponent 'templates'
+# This sections describe 'templates' subcomponent
 class SubcomponentTemplatesSection < SitePrism::Section
   section :display_drop_down, DisplayDropDownSection, '.componenttbar'
   element :create_loc_copy_button, :xpath, "//span[text()='Create Local Copy']"
@@ -15,17 +15,17 @@ class SubcomponentTemplatesSection < SitePrism::Section
     elements :table, '.x-grid-table tr'
   end
 
-  # This section describes subcomponent 'data source'
+  # This section describes 'data source' subcomponent
   class SubcomponentDataSrcSection < SitePrism::Section
     section :templ_btn_table, TemplatesButtonsTableSection, "div[id^='DataSource']:not(div[id$='body'])"
   end
   section :subcomp_data_src, SubcomponentDataSrcSection, "div[id^='DataSource']:not(div[id$='body'])"
-  # This section describes subcomponent 'thresholds'
+  # This section describes 'thresholds' subcomponent
   class SubcomponentThresholdsSection < SitePrism::Section
     section :templ_btn_table, TemplatesButtonsTableSection, '#component_template_threshold'
   end
   section :subcomp_thresholds, SubcomponentThresholdsSection, '#component_template_threshold'
-  # This section describes subcomponent 'graph definition'
+  # This section describes 'graph definition' subcomponent
   class SubcomponentGraphsDefSection < SitePrism::Section
     section :templ_btn_table, TemplatesButtonsTableSection, "div[id^='graphgrid']:not(div[id$='body'])"
   end
