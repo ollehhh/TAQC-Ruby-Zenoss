@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
+# This section describes the same items in different popups
 class FloatPopupsSection < SitePrism::Section
   element :close_dialog_button, '.x-tool-close'
   element :submit_button, :xpath, "//span[text()='Submit']"
-  element :save_button, :xpath, "(//span[text()='Save'])[6]"
-  element :cancel_button, :xpath, "(//span[text()='Cancel'])[6]"
+  element :save_button, :xpath, "(//span[text()='Save'])[5]"
+  element :cancel_button, :xpath, "(//span[text()='Cancel'])[5]"
   element :ok_button, :xpath, "//span[text()='OK']"
   element :name_field, "input[name='newId']"
   element :description_field, "textarea[name='description']"

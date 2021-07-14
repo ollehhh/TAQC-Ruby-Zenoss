@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This section describes the same table elements on modeler plugins and monitoring templates page
 class AvailableSelectedTableSection < SitePrism::Section
   elements :available_list, :xpath, "(//div[@class='x-boundlist-list-ct'])[1]/ul/li"
   elements :selected_list, :xpath, "(//div[@class='x-boundlist-list-ct'])[2]/ul/li"

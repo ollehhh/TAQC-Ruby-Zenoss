@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'float_popups_section'
-
+# This section describes 'Edit Threshold' popup
 class EditThresholdSection < SitePrism::Section
   section :float_popups, FloatPopupsSection, '#editThresholdDialog'
   section :available_selected_table, AvailableSelectedTableSection, '#thresholdItemSelector-inputRow'
@@ -17,7 +17,6 @@ class EditThresholdSection < SitePrism::Section
   element :esc_count_field, "input[name='escalateCount']"
 
   element :severity_dropdown, "input[name='severity']"
-  element :severity_dropdown_button, 'table[id*=severity] .x-form-trigger'
   element :event_class_dropdown, "input[name='eventClass']"
   element :event_class_dropdown_button, 'table[id*=event] .x-form-trigger'
 end

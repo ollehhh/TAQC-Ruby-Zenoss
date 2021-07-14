@@ -1,29 +1,29 @@
 # frozen_string_literal: true
 
-# This page describe monitoring templates page
+# This page describes monitoring templates page
 class MonitoringTemplatesPage < SitePrism::Page
+  # This section describes buttons and tables
+  class MonitorTemplBtnTableSection < SitePrism::Section
+    element :add_button, '.x-btn:nth-of-type(1) button'
+    element :remove_button, '.x-btn:nth-of-type(2) button'
+    element :edit_dropdown_button, '.x-btn:nth-of-type(3) button'
+    elements :table, '.x-grid-table tr'
+  end
+
+  # This section describes Data Source section
   class DataSourcesSection < SitePrism::Section
-    element :add_data_src_button, '#dataSourceTreeGrid .x-btn:nth-of-type(1) button'
-    element :remove_data_src_button, '#dataSourceTreeGrid .x-btn:nth-of-type(2) button'
-    element :edit_options_dropdown, '#dataSourceTreeGrid .x-btn-arrow button'
-    elements :edit_options_dropdown_items, '.x-panel-body.x-menu-body span'
-    elements :data_src_table, '#dataSourceTreeGrid-body div table tbody tr'
+    section :monitor_templ_btn_table, MonitorTemplBtnTableSection, '#dataSourceTreeGrid'
+    elements :dropdown_items, '.x-panel-body.x-menu-body span'
   end
   section :data_sources, DataSourcesSection, '#dataSourceTreeGrid'
-
+  # This section describes Thresholds section
   class ThresholdsSection < SitePrism::Section
-    element :add_threshold_button, '#thresholdGrid .x-btn:nth-of-type(1) button'
-    element :delete_threshold_button, '#thresholdGrid .x-btn:nth-of-type(2) button'
-    element :thresholds_details, '#thresholdGrid .x-btn:nth-of-type(3) button'
-    elements :thresholds_table, '#thresholdGrid-body div table tbody tr'
+    section :monitor_templ_btn_table, MonitorTemplBtnTableSection, '#thresholdGrid'
   end
   section :thresholds, ThresholdsSection, '#thresholdGrid'
-
+  # This section describes Graphs Definition section
   class GraphsDefinitionSection < SitePrism::Section
-    element :add_graph_def_button, '#graphGrid .x-btn:nth-of-type(1) button'
-    element :delete_graph_def_button, '#graphGrid .x-btn:nth-of-type(2) button'
-    element :manage_graph_def_dropdown, '#graphGrid .x-btn-arrow button'
-    elements :graphs_def_table, '#graphGrid-body div table tbody tr'
+    section :monitor_templ_btn_table, MonitorTemplBtnTableSection, '#graphGrid'
   end
   section :graphs_definition, GraphsDefinitionSection, '#graphGrid'
   section :float_popups, FloatPopupsSection, '.x-window.x-layer.x-window-default '
