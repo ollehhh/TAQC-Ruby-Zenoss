@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# This section describes subcomponent 'dependency'
 class SubcomponentDependencySection < SitePrism::Section
   section :display_drop_down, DisplayDropDownSection, '.componenttbar'
   element :add_button, "div[id*='dependencygrid'] .x-btn:nth-of-type(1) button"
