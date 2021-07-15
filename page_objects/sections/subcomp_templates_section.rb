@@ -1,33 +1,33 @@
 # frozen_string_literal: true
 
+# This sections describe 'templates' subcomponent
 class SubcomponentTemplatesSection < SitePrism::Section
   section :display_drop_down, DisplayDropDownSection, '.componenttbar'
   element :create_loc_copy_button, :xpath, "//span[text()='Create Local Copy']"
   element :delete_loc_copy_button, :xpath, "//span[text()='Delete Local Copy']"
   element :template_dropdown, "div[id^='contextcardpanel'] input[id^='combobox']"
   element :template_dropdown_items, '.x-boundlist-list-ct ul li'
+  # This section describes toolbar buttons and table
+  class TemplatesButtonsTableSection < SitePrism::Section
+    element :add_button, '.x-btn:nth-of-type(3) button'
+    element :remove_button, '.x-btn:nth-of-type(4) button'
+    element :edit_dropdown_button, '.x-btn:nth-of-type(5) button'
+    elements :table, '.x-grid-table tr'
+  end
 
+  # This section describes 'data source' subcomponent
   class SubcomponentDataSrcSection < SitePrism::Section
-    element :add_data_src_button, "div[id*='DataSource'] .x-btn:nth-of-type(3) button"
-    element :remove_data_src_button, "div[id*='DataSource'] .x-btn:nth-of-type(4) button"
-    element :edit_options_dropdown, "div[id*='DataSource'] .x-btn-arrow button"
-    elements :data_src_table, "div[id^='DataSourceTreeGrid'][id$=body] tr"
+    section :templ_btn_table, TemplatesButtonsTableSection, "div[id^='DataSource']:not(div[id$='body'])"
   end
   section :subcomp_data_src, SubcomponentDataSrcSection, "div[id^='DataSource']:not(div[id$='body'])"
-
+  # This section describes 'thresholds' subcomponent
   class SubcomponentThresholdsSection < SitePrism::Section
-    element :add_threshold_button, '#component_template_threshold .x-btn:nth-of-type(3) button'
-    element :delete_threshold_button, '#component_template_threshold .x-btn:nth-of-type(4) button'
-    element :thresholds_details, '#component_template_threshold .x-btn:nth-of-type(5) button'
-    elements :thresholds_table, '#component_template_threshold-body tr'
+    section :templ_btn_table, TemplatesButtonsTableSection, '#component_template_threshold'
   end
   section :subcomp_thresholds, SubcomponentThresholdsSection, '#component_template_threshold'
-
+  # This section describes 'graph definition' subcomponent
   class SubcomponentGraphsDefSection < SitePrism::Section
-    element :add_graph_def_button, "div[id*='graphgrid'] .x-btn:nth-of-type(3) button"
-    element :delete_graph_def_button, "div[id*='graphgrid'] .x-btn:nth-of-type(4) button"
-    element :manage_graph_def_dropdown, "div[id*='graphgrid'] .x-btn-arrow button"
-    elements :graphs_def_table, "div[id*='graphgrid'][id$=body] tr"
+    section :templ_btn_table, TemplatesButtonsTableSection, "div[id^='graphgrid']:not(div[id$='body'])"
   end
-  section :subcomp_graph_def, SubcomponentGraphsDefSection, "div[id^='graphgrid']:not(div[id$='body']"
+  section :subcomp_graph_def, SubcomponentGraphsDefSection, "div[id^='graphgrid']:not(div[id$='body'])"
 end
