@@ -6,6 +6,16 @@ detectors:
     exclude:
       - 'LoginPage'
       - 'InfPage'
+      - 'ModelerPluginsPage'
+      - 'MonitoringTemplatesPage'
+      - 'AvailableSelectedTableSection'
+      - 'DataSourcePopupsSection'
+      - 'DataSourcesSection'
+      - 'EditDataSourcePointSection'
+      - 'EditThresholdSection'
+      - 'GraphsDefinitionSection'
+      - 'ThresholdsSection'
+      - 'ViewEditGraphDefinitionSection'
   TooManyStatements:
     max_statements: 20
   TooManyInstanceVariables:
