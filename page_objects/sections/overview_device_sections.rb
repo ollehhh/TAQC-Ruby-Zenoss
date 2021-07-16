@@ -29,4 +29,4 @@ end
 class SnmpSysnameSection < SitePrism::Section
   elements :labels, '#deviceoverviewpanel_snmpsummary table div label'
   elements :values, '#deviceoverviewpanel_snmpsummary .x-form-display-field'
-en
+end
