@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ComponentsPage < SitePrism::Page
+  section :display_drop_down_section, DisplayDropDownSection, "div[id^='contextcardpanel'] .componenttbar"
   section :left_bar_section, ComponentleftbarSection, '#detailContainer'
   section :main_bar, MainBarSection, '#devdetailbar'
   section :interfaces, ToolBar, '#component_card-body :first-child .x-toolbar'
