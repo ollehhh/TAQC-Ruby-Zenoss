@@ -11,7 +11,7 @@ require_all 'page_objects/sections/'
 require_all 'page_objects/pages/'
 
 def options
-  Selenium::WebDriver::Chrome::Options.new(args: %w[window-size=1200,1000])
+  Selenium::WebDriver::Chrome::Options.new(args: ['start-maximized'])
 end
 
 Capybara.ignore_hidden_elements = false
