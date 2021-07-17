@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative '../at_popups_section'
+require_relative 'float_popups_section'
 # This section describes 'Edit Graph Definition' popup
 class EditGraphDefinitionSection < SitePrism::Section
   section :float_popups, FloatPopupsSection, '#viewGraphDefinitionDialog'
