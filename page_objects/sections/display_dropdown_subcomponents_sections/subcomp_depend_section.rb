@@ -12,5 +12,5 @@ class SubcomponentDependencySection < SitePrism::Section
 
   element :groups_dropdown, "div[id*='dependencygrid'] .x-btn:nth-of-type(8) button"
   element :util_filter_slider, :xpath, "//div[@class='x-slider-thumb']"
-  elements :dependency_table, "div[id*='dependencygrid'][id$='body'] .x-grid-group-title"
+  element :dependency_table, "div[id*='dependencygrid'][id$='body'] .x-grid-group-title"
 end
