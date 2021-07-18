@@ -33,7 +33,3 @@ end
 Then('I should see {string} device_name') do |device_name|
   check_device_name(device_name)
 end
-
-
-
-

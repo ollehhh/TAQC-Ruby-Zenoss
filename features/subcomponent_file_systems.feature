@@ -24,13 +24,3 @@ Feature: I verify 'File Systems' subcomponent
     And I click on dependencies button
     And I open dependencies table
     Then I should see 'qa-ubuntu-11.zenoss.lab' device_name
-
-
-
-
-
-
-
-
-
-
