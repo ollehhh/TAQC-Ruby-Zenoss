@@ -1,7 +1,5 @@
 @device_monitoring_templates
 Feature: I verify device monitoring templates
-  As a visitor
-  I want to be able to verify device monitoring templates
 
   Background:
     Given that the user is logged in
@@ -47,4 +45,3 @@ Feature: I verify device monitoring templates
     And I should see 'uptime' name
     And I should see '/usr/bin/env uptime over SSH' source
     And I should see remove, add and edit buttons above the tables
-

@@ -40,5 +40,10 @@ end
 When('I set {string} event class and {string} summary in fields') do |event_class, summary|
   set_values_in_fields(event_class, summary)
 end
+Then('I should see event with {string} event class and {string} summary in events table') do |event_class, summary|
+  check_event(event_class, summary)
+end
+
+
 
 

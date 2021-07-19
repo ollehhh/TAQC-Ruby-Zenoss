@@ -1,15 +1,18 @@
 @subcomponent_ip_services
-Feature: I verify 'IP Services' subcomponent
+Feature: I verify 'IP Services' component
 
   Background:
     Given that the user is logged in
 
   @qa-ubuntu-11.zenoss.lab_device
-  Scenario: Check values on 'IP Services' subcomponent page
+  Scenario: Check values on 'IP Services' component page
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'IP Services ' subcomponent
     And I set 'ssh' value in filter field
-    And I select 'Details' value from display drop down
+    And I select 'Events' value from display drop down
+    And I set '/App' event class and 'TEST' summary in fields
+    Then I should see event with '/App' event class and 'TEST' summary in events table
+    When I select 'Details' value from display drop down
     Then I should see the same value for 'Service Class:' in details as on the table within column '2'
     And I should see the same value for 'Protocol:' in details as on the table within column '3'
     And I should see the same value for 'Port:' in details as on the table within column '4'
@@ -29,11 +32,14 @@ Feature: I verify 'IP Services' subcomponent
     Then I should see 'Devices' dependent in dependencies table
 
   @qa-ubuntu-12.zenoss.lab_device
-  Scenario: Check values on 'IP Services' subcomponent page
+  Scenario: Check values on 'IP Services' component page
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'IP Services ' subcomponent
     And I set 'snmp' value in filter field
-    And I select 'Details' value from display drop down
+    And I select 'Events' value from display drop down
+    And I set '/App' event class and 'TEST' summary in fields
+    Then I should see event with '/App' event class and 'TEST' summary in events table
+    When I select 'Details' value from display drop down
     Then I should see the same value for 'Service Class:' in details as on the table within column '2'
     And I should see the same value for 'Protocol:' in details as on the table within column '3'
     And I should see the same value for 'Port:' in details as on the table within column '4'
@@ -51,6 +57,3 @@ Feature: I verify 'IP Services' subcomponent
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
-
-
-

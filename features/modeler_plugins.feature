@@ -1,7 +1,6 @@
 @device_modeler_plugins
-Feature: I verify device modeler plugins
-  As a visitor
-  I want to be able to verify that correct plugins are selected for the device
+Feature:I verify that correct plugins are selected for the device
+
   Background:
     Given that the user is logged in
 
