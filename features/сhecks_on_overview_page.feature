@@ -1,10 +1,12 @@
+@overview_page
 Feature: We can filter the list of devices
   and choice device
-
+  @qa-ubuntu-11.zenoss.lab_device
   Background:
     Given that the user is logged in
 
   Scenario: Check user can set filter by table device
+  and the correctness of the data on the page overview
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I should see '10.88.120.109' value for 'Device ID:' field
     And I should see 'root' value for 'Connection Information:' field
@@ -25,7 +27,7 @@ Feature: We can filter the list of devices
     And I should see 'VMware' value for 'Hardware Manufacturer:' field
     And I should see 'VMware Virtual Platform' value for 'Hardware Model:' field
     And I should see 'Ubuntu' value for 'OS Manufacturer:' field
-    And I should see 'Ubuntu 11.10' value for 'OS Manufacturer:' field
+    And I should see 'Ubuntu 11.10' value for 'OS Model:' field
     And I should see comment input for 'Comments:' field
     And I should see two buttons save and cancel on center
     And I should see two buttons save and cancel at the bottom of the page
