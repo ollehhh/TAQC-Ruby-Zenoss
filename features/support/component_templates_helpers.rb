@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # This module contains helper methods for components page
-module SubcomponentTemplatesHelpers
+module ComponentTemplatesHelpers
   def check_templ_dropdown_value(value)
     @components_page = ComponentsPage.new
     @components_page.subcomp_templates.template_dropdown.click
@@ -33,4 +33,4 @@ module SubcomponentTemplatesHelpers
     expect(@components_page.subcomp_templates.subcomp_graph_def).to have_content value
   end
 end
-World(SubcomponentTemplatesHelpers)
+World(ComponentTemplatesHelpers)
