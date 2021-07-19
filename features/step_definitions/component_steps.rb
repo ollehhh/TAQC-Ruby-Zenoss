@@ -3,6 +3,10 @@
 When('I go to {string} subcomponent') do |subcomponent|
   click_on_subcomponent(subcomponent)
 end
+When('I set {string} value in filter field') do |value|
+  clear_filter
+  set_value_to_filter(value)
+end
 When('I select {string} value from display drop down') do |value|
   get_val_from_displ_drop_down(value)
 end
@@ -27,9 +31,10 @@ end
 When('I click on dependencies button') do
   click_dependencies_btn
 end
-When('I open dependencies table') do
-  open_dependencies_table
+Then('I should see {string} dependent in dependencies table') do |dependent|
+  check_dependent(dependent)
 end
-Then('I should see {string} device_name') do |device_name|
-  check_device_name(device_name)
+Then('I should see the same value for {string} in details as on the table within column {string}') do |value_title, column_number|
+  compare_values_in_two_sections(value_title, column_number)
 end
+

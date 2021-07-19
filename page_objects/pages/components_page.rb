@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ComponentsPage < SitePrism::Page
+  section :toolbar, ToolBar, '#component_card-body :first-child .x-toolbar'
+  section :components_table, ComponentsTable, "[id^='gridview']"
   section :display_drop_down_section, DisplayDropDownSection, "div[id^='contextcardpanel'] .componenttbar"
   section :subcomp_templates, SubcomponentTemplatesSection, "div[id^='contextcardpanel']:not(div[id$='body'])"
   section :subcomp_dependency, SubcomponentDependencySection, "div[id^='contextcardpanel']:not(div[id$='body'])"
