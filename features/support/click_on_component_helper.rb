@@ -8,8 +8,10 @@ module ClickOnComponentHelper
   end
 
   def click_on_graphs
-    @overview_device_page = OverviewDevicePage.new
-    @overview_device_page.left_bar_section.component_tr[4].td_element.click
+    find('#deviceDetailNav-body tr td', text: 'Graphs', exact_text: true).click
+  end
+  def click_on_component_graphs
+    find('#deviceDetailNav-body tr td', text: 'Component Graphs', exact_text: true).click
   end
 end
 World(ClickOnComponentHelper)
