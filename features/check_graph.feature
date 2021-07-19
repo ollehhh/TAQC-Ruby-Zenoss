@@ -1,5 +1,6 @@
-Feature: We see graphs on device
-
+@graphs_page
+Feature: User can check data on graphs page
+  @qa-ubuntu-11.zenoss.lab_device
   Background:
     Given that the user is logged in
     Given I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
