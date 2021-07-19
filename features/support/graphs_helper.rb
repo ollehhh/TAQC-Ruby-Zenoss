@@ -1,16 +1,14 @@
+
 module GraphsHelper
   def name_graphs name
     @graphs_page = GraphsPage.new
-    @graphs_page.graphs_section.graphs.each do |el|
-      if el.name_graph.text.to_s == name
-        expect(el.text).to have_content(name)
-      end
-    end
+    names = @graphs_page.graphs_section.graphs.map(&:name_graph).map(&:text)
+    expect(names).to include(name)
   end
 
   def metric_data
     @graphs_page.graphs_section.graphs.each do
-      expect(page).to have_css('#comments-textarea-inputEl')
+      expect(page).to have_css('.zenfooter .zenfooter_content')
     end
   end
 
@@ -21,6 +19,20 @@ module GraphsHelper
       end
     end
   end
+
+  def component_graphs component, graphs
+    @component_graphs = ComponentGraphsPage.new
+    @component_graphs.dropdown_button[2].click
+    names = @component_graphs.list_li.map(&:text)
+    expect(names).to include(component)
+    find('li.x-boundlist-item', text: component, exact_text: true).click
+    @component_graphs.dropdown_button[3].click
+    names = @component_graphs.list_li.map(&:text)
+    expect(names).to include(graphs)
+    find('li.x-boundlist-item', text: graphs, exact_text: true).click
+    sleep 1
+  end
+
 end
 
 World(GraphsHelper)
