@@ -1,15 +1,18 @@
 @subcomponent_interfaces
-Feature: I verify 'Interfaces' subcomponent
+Feature: I verify 'Interfaces' component
 
   Background:
     Given that the user is logged in
 
   @qa-ubuntu-11.zenoss.lab_device
-  Scenario: Check values on 'Interfaces' subcomponent page
+  Scenario: Check values on 'Interfaces' component page
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'Interfaces' subcomponent
     And I set 'eth0' value in filter field
-    And I select 'Details' value from display drop down
+    And I select 'Events' value from display drop down
+    And I set '/App' event class and 'TEST' summary in fields
+    Then I should see event with '/App' event class and 'TEST' summary in events table
+    When I select 'Details' value from display drop down
     Then I should see the same value for 'Interface Name:' in details as on the table within column '2'
     And I should see the same value for 'IP Address (Primary):' in details as on the table within column '3'
     And I should see the same value for 'IP Addresses (All):' in details as on the table within column '3'
@@ -37,11 +40,14 @@ Feature: I verify 'Interfaces' subcomponent
     Then I should see 'Devices' dependent in dependencies table
 
   @qa-ubuntu-12.zenoss.lab_device
-  Scenario: Check values on 'Interfaces' subcomponent page
+  Scenario: Check values on 'Interfaces' component page
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'Interfaces' subcomponent
     And I set 'eth0' value in filter field
-    And I select 'Details' value from display drop down
+    And I select 'Events' value from display drop down
+    And I set '/App' event class and 'TEST' summary in fields
+    Then I should see event with '/App' event class and 'TEST' summary in events table
+    When I select 'Details' value from display drop down
     Then I should see the same value for 'Interface Name:' in details as on the table within column '2'
     And I should see the same value for 'IP Address (Primary):' in details as on the table within column '3'
     And I should see the same value for 'IP Addresses (All):' in details as on the table within column '3'
@@ -67,4 +73,3 @@ Feature: I verify 'Interfaces' subcomponent
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
-

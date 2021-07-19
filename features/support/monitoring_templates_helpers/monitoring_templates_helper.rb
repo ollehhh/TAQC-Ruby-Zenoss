@@ -21,16 +21,12 @@ module MonitoringTemplatesHelpers
 
   def check_templates_data_src_name(name)
     @monitoring_templates_page = MonitoringTemplatesPage.new
-    #sleep 5
     expect(@monitoring_templates_page.data_sources).to have_content name
   end
 
   def check_templates_data_src_src(source)
     @monitoring_templates_page = MonitoringTemplatesPage.new
-    #sleep 5
     expect(@monitoring_templates_page.data_sources).to have_content source
   end
 end
-
 World(MonitoringTemplatesHelpers)
-

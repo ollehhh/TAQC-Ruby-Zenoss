@@ -13,4 +13,3 @@ module ComponentDependencyHelpers
   end
 end
 World(ComponentDependencyHelpers)
-

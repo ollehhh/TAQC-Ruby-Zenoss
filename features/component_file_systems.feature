@@ -1,15 +1,18 @@
 @subcomponent_file_systems
-Feature: I verify 'File Systems' subcomponent
+Feature: I verify 'File Systems' component
 
   Background:
     Given that the user is logged in
 
   @qa-ubuntu-11.zenoss.lab_device
-  Scenario: Check values on 'File Systems' subcomponent page
+  Scenario: Check values on 'File Systems' component page
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'File Systems ' subcomponent
     And I set '/boot' value in filter field
-    And I select 'Details' value from display drop down
+    And I select 'Events' value from display drop down
+    And I set '/App' event class and 'TEST' summary in fields
+    Then I should see event with '/App' event class and 'TEST' summary in events table
+    When I select 'Details' value from display drop down
     Then I should see the same value for 'Mount:' in details as on the table within column '2'
     And I should see the same value for 'Type:' in details as on the table within column '3'
     And I should see the same value for 'Total Bytes:' in details as on the table within column '4'
@@ -43,13 +46,15 @@ Feature: I verify 'File Systems' subcomponent
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
 
-
   @qa-ubuntu-12.zenoss.lab_device
-  Scenario: Check values on 'File Systems' subcomponent page
+  Scenario: Check values on 'File Systems' component page
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'File Systems ' subcomponent
     And I set '/boot' value in filter field
-    And I select 'Details' value from display drop down
+    And I select 'Events' value from display drop down
+    And I set '/App' event class and 'TEST' summary in fields
+    Then I should see event with '/App' event class and 'TEST' summary in events table
+    When I select 'Details' value from display drop down
     Then I should see the same value for 'Mount:' in details as on the table within column '2'
     And I should see the same value for 'Block Device:' in details as on the table within column '3'
     And I should see the same value for 'Total Bytes:' in details as on the table within column '4'
@@ -82,8 +87,3 @@ Feature: I verify 'File Systems' subcomponent
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
-
-
-
-
-
