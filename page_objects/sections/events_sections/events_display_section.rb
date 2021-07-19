@@ -11,4 +11,6 @@ class ToolBarSection < SitePrism::Section
   elements :drp_unchecked, "div[class='x-component x-box-item x-component-default x-menu-item x-menu-item-unchecked']"
   elements :drp_list_checked, "div[class='x-component x-box-item x-component-default x-menu-item x-menu-item-checked']"
   elements :input_filters, '#event_paneldocked-filter-innerCt input'
+  element :event_input, "table[id='event_panel-filter-eventClass-triggerWrap'] input[name='eventClass']"
+  element :summary_input, "td[id='event_panel-filter-summary-bodyEl'] input[name='event_panel-filter-summary-inputEl']"
 end

@@ -37,4 +37,8 @@ end
 Then('I should see the same value for {string} in details as on the table within column {string}') do |value_title, column_number|
   compare_values_in_two_sections(value_title, column_number)
 end
+When('I set {string} event class and {string} summary in fields') do |event_class, summary|
+  set_values_in_fields(event_class, summary)
+end
+
 

@@ -24,6 +24,7 @@ module ComponentsPageHelpers
     @components_page = ComponentsPage.new
     @components_page.display_drop_down_section.display_dropdown_button.click
     @components_page.find(:xpath, './/li', text: value).click
+   sleep 15
   end
 end
 World(ComponentsPageHelpers)
