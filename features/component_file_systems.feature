@@ -9,7 +9,14 @@ Feature: I verify 'File Systems' component
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'File Systems ' subcomponent
     And I set '/boot' value in filter field
-    And I select 'Events' value from display drop down
+    And I select 'Graphs' value from display drop down
+    Then I should see name graph 'Utilization - /Server/SSH/Linux - qa-ubuntu-11.zenoss.lab - /boot'
+    And I should see name graph 'Usage - /Server/SSH/Linux - qa-ubuntu-11.zenoss.lab - /boot'
+    And I should see name graph 'Inode Utilization - /Server/SSH/Linux - qa-ubuntu-11.zenoss.lab - /boot'
+    And I should see name graph 'Inode Usage - /Server/SSH/Linux - qa-ubuntu-11.zenoss.lab - /boot'
+    And I should see metric data
+    And metric data dont have 'N/A' value
+    When I select 'Events' value from display drop down
     And I set '/App' event class and 'TEST' summary in fields
     Then I should see event with '/App' event class and 'TEST' summary in events table
     When I select 'Details' value from display drop down
@@ -51,7 +58,20 @@ Feature: I verify 'File Systems' component
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'File Systems ' subcomponent
     And I set '/boot' value in filter field
-    And I select 'Events' value from display drop down
+    And I select 'Graphs' value from display drop down
+    Then I should see name graph 'Utilization - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - /boot'
+    And I should see name graph 'Usage - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - /boot'
+    And I should see name graph 'Inode Utilization - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - /boot'
+    And I should see name graph 'Inode Usage - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - /boot'
+    And I should see name graph 'Operation Throughput - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - sda1'
+    And I should see name graph 'Merge Rate - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - sda1'
+    And I should see name graph 'Sector Throughput - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - sda1'
+    And I should see name graph 'IO Operations - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - sda1'
+    And I should see name graph 'IO Utilization - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - sda1'
+    And I should see name graph 'Weighted IO Utilization - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - sda1'
+    And I should see metric data
+    And metric data dont have 'N/A' value
+    When I select 'Events' value from display drop down
     And I set '/App' event class and 'TEST' summary in fields
     Then I should see event with '/App' event class and 'TEST' summary in events table
     When I select 'Details' value from display drop down
