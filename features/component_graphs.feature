@@ -1,6 +1,6 @@
 @graphs_component
 Feature: We see graphs on component grephs component page
-  @qa-ubuntu-11.zenoss.lab_device
+
   Background:
     Given that the user is logged in
     Given I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
