@@ -9,7 +9,13 @@ Feature: I verify 'Interfaces' component
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'Interfaces' subcomponent
     And I set 'eth0' value in filter field
-    And I select 'Events' value from display drop down
+    And I select 'Graphs' value from display drop down
+    Then I should see name graph 'Data Throughput - /Server/SSH/Linux - qa-ubuntu-11.zenoss.lab - eth0'
+    And I should see name graph 'Packet Throughput - /Server/SSH/Linux - qa-ubuntu-11.zenoss.lab - eth0'
+    And I should see name graph 'Error Rate - /Server/SSH/Linux - qa-ubuntu-11.zenoss.lab - eth0'
+    And I should see metric data
+    And metric data dont have 'N/A' value
+    When I select 'Events' value from display drop down
     And I set '/App' event class and 'TEST' summary in fields
     Then I should see event with '/App' event class and 'TEST' summary in events table
     When I select 'Details' value from display drop down
@@ -44,7 +50,13 @@ Feature: I verify 'Interfaces' component
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'Interfaces' subcomponent
     And I set 'eth0' value in filter field
-    And I select 'Events' value from display drop down
+    And I select 'Graphs' value from display drop down
+    Then I should see name graph 'Data Throughput - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - eth0'
+    And I should see name graph 'Packet Throughput - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - eth0'
+    And I should see name graph 'Error Rate - /Server/SSH/Linux - qa-ubuntu-12.zenoss.lab - eth0'
+    And I should see metric data
+    And metric data dont have 'N/A' value
+    When I select 'Events' value from display drop down
     And I set '/App' event class and 'TEST' summary in fields
     Then I should see event with '/App' event class and 'TEST' summary in events table
     When I select 'Details' value from display drop down
