@@ -1,7 +1,7 @@
 @overview_page
 Feature: We can filter the list of devices
   and choice device
-  @qa-ubuntu-11.zenoss.lab_device
+
   Background:
     Given that the user is logged in
 
