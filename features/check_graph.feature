@@ -4,7 +4,7 @@ Feature: User can check data on graphs page
   Background:
     Given that the user is logged in
     Given I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
-
+  @qa-ubuntu-11.zenoss.lab_device
   Scenario: Check user can see graphs name and metric data that cannot be N/A
     When I click graphs component
     When I should see name graph 'CPU Utilization - /Server/SSH/Linux - qa-ubuntu-11.zenoss.lab'
