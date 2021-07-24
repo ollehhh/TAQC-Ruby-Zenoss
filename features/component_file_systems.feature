@@ -1,10 +1,10 @@
-@subcomponent_file_systems
+@component_file_systems @zenoss
 Feature: I verify 'File Systems' component
 
   Background:
     Given that the user is logged in
 
-  @qa-ubuntu-11.zenoss.lab_device
+  @component_file_systems @device1
   Scenario: Check values on 'File Systems' component page
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'File Systems ' subcomponent
@@ -53,7 +53,7 @@ Feature: I verify 'File Systems' component
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
 
-  @qa-ubuntu-12.zenoss.lab_device
+  @component_file_systems @device2
   Scenario: Check values on 'File Systems' component page
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'File Systems ' subcomponent

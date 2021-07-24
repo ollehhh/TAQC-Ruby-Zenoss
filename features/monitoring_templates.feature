@@ -1,10 +1,10 @@
-@device_monitoring_templates
+@monitoring_templates @zenoss
 Feature: I verify device monitoring templates
 
   Background:
     Given that the user is logged in
 
-  @qa-ubuntu-11.zenoss.lab_device
+  @monitoring_templates @device1
   Scenario: Check values in graph definition table
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'Device (/Server/SSH/Linux)' component
@@ -25,7 +25,7 @@ Feature: I verify device monitoring templates
     And I should see '/usr/bin/env uptime over SSH' source
     And I should see remove, add and edit buttons above the tables
 
-  @qa-ubuntu-12.zenoss.lab_device
+  @monitoring_templates @device2
   Scenario: Check values in graph definition table
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'Device (/Server/SSH/Linux)' component

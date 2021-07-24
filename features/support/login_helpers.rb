@@ -5,7 +5,6 @@ module LoginHelper
   def login_test_user
     @login_page = LoginPage.new
     @login_page.load
-
     @login_page.login_field.set(ENV['EMAIL'])
     @login_page.password_field.set(ENV['PASSWORD'])
     @login_page.login_button.click

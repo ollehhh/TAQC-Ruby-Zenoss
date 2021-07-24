@@ -23,7 +23,11 @@ module ComponentsPageHelpers
   def get_val_from_displ_drop_down(value)
     @components_page = ComponentsPage.new
     @components_page.display_drop_down_section.display_dropdown_button.click
-    @components_page.find(:xpath, "//div[@class='x-boundlist-list-ct']//li[contains(.,'#{value}')]").click
+    begin
+      @components_page.find(:xpath, "//div[@class='x-boundlist-list-ct']//li[contains(.,'#{value}')]").click
+    rescue Selenium::WebDriver::Error::ElementNotInteractableError
+      retry
+    end
   end
 end
 World(ComponentsPageHelpers)

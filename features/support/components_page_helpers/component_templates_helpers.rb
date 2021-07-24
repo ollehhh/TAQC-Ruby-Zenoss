@@ -30,7 +30,11 @@ module ComponentTemplatesHelpers
 
   def check_subcomp_templ_graph_def(value)
     @components_page = ComponentsPage.new
+    begin
     expect(@components_page.subcomp_templates.subcomp_graph_def).to have_content value
+    rescue RSpec::Expectations::ExpectationNotMetError
+      retry
+    end
   end
 end
 World(ComponentTemplatesHelpers)
