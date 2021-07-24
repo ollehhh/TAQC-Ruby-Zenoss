@@ -4,7 +4,11 @@
 module ModelerPluginsHelper
   def check_selected_modeler_plugins(plugin)
     @modeler_plugins_page = ModelerPluginsPage.new
-    expect(@modeler_plugins_page.available_selected_table).to have_content plugin
+    begin
+      expect(@modeler_plugins_page.available_selected_table).to have_content plugin
+    rescue Capybara::ElementNotFound
+      retry
+    end
   end
 
   def check_modeler_plugin_path(plugin_path)

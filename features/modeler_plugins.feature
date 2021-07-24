@@ -1,10 +1,10 @@
-@device_modeler_plugins
+@modeler_plugins @zenoss
 Feature:I verify that correct plugins are selected for the device
 
   Background:
     Given that the user is logged in
 
-  @qa-ubuntu-11.zenoss.lab_device
+  @modeler_plugins @device1
   Scenario: Check the list of selected modeler plugins
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'Modeler Plugins' component
@@ -24,7 +24,7 @@ Feature:I verify that correct plugins are selected for the device
     And I should see button container
     And I should see save and cancel buttons
 
-  @qa-ubuntu-12.zenoss.lab_device
+  @modeler_plugins @device2
   Scenario: Check the list of selected modeler plugins
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'Modeler Plugins' component

@@ -1,10 +1,10 @@
-@subcomponent_ip_services
+@component_ip_services @zenoss
 Feature: I verify 'IP Services' component
 
   Background:
     Given that the user is logged in
 
-  @qa-ubuntu-11.zenoss.lab_device
+  @component_ip_services_device1
   Scenario: Check values on 'IP Services' component page
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'IP Services ' subcomponent
@@ -31,7 +31,7 @@ Feature: I verify 'IP Services' component
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
 
-  @qa-ubuntu-12.zenoss.lab_device
+  @component_ip_services_device2
   Scenario: Check values on 'IP Services' component page
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'IP Services ' subcomponent

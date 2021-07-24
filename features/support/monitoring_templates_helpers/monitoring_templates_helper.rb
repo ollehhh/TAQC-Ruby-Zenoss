@@ -4,7 +4,11 @@
 module MonitoringTemplatesHelpers
   def check_templates_graph_def(value)
     @monitoring_templates_page = MonitoringTemplatesPage.new
-    expect(@monitoring_templates_page.graphs_definition).to have_content value
+    begin
+      expect(@monitoring_templates_page.graphs_definition).to have_content value
+    rescue Selenium::WebDriver::Error::StaleElementReferenceError
+      retry
+    end
   end
 
   def find_add_remove_edit_buttons

@@ -1,10 +1,10 @@
-@subcomponent_interfaces
+@component_interfaces @zenoss
 Feature: I verify 'Interfaces' component
 
   Background:
     Given that the user is logged in
 
-  @qa-ubuntu-11.zenoss.lab_device
+  @component_interfaces_device1
   Scenario: Check values on 'Interfaces' component page
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'Interfaces' subcomponent
@@ -45,7 +45,7 @@ Feature: I verify 'Interfaces' component
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
 
-  @qa-ubuntu-12.zenoss.lab_device
+  @component_interfaces_device2
   Scenario: Check values on 'Interfaces' component page
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'Interfaces' subcomponent
