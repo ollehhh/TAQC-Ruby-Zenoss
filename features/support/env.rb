@@ -11,9 +11,10 @@ require_all 'page_objects/sections/'
 require_all 'page_objects/pages/'
 
 def options
-  Selenium::WebDriver::Chrome::Options.new(args: ['start-maximized'])
+  Selenium::WebDriver::Chrome::Options.new(args: %w[window-size=1200,1000])
 end
 
+Capybara.default_max_wait_time = 10
 Capybara.ignore_hidden_elements = false
 Capybara.default_driver = :selenium
 Capybara.register_driver :selenium do |app|

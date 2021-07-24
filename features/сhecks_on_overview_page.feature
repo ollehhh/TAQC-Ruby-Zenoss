@@ -4,7 +4,7 @@ Feature: We can filter the list of devices
 
   Background:
     Given that the user is logged in
-
+  @qa-ubuntu-11.zenoss.lab_device
   Scenario: Check user can set filter by table device
   and the correctness of the data on the page overview
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device

@@ -11,6 +11,7 @@ module SearchDevicebyfilterHelper
   end
 
   def clear_filters
+    @inf_page = InfPage.new
     @inf_page.functional_button[3].click
     @inf_page.clear_filters.click
   end
