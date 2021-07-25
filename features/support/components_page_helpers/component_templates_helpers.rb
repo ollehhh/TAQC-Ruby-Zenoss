@@ -8,23 +8,15 @@ module ComponentTemplatesHelpers
     expect(@components_page).to have_content value
   end
 
-  def check_subc_templ_data_src_name(name)
+  def check_subc_templ_data_src(name, source)
     @components_page = ComponentsPage.new
     expect(@components_page.subcomp_templates.subcomp_data_src).to have_content name
-  end
-
-  def check_subc_templ_data_src_src(source)
-    @components_page = ComponentsPage.new
     expect(@components_page.subcomp_templates.subcomp_data_src).to have_content source
   end
 
-  def check_sub_templ_trh_name(name)
+  def check_sub_templ_trh(name, maxval)
     @components_page = ComponentsPage.new
     expect(@components_page.subcomp_templates.subcomp_thresholds).to have_content name
-  end
-
-  def check_sub_templ_trh_max(maxval)
-    @components_page = ComponentsPage.new
     expect(@components_page.subcomp_templates.subcomp_thresholds).to have_content maxval
   end
 

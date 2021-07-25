@@ -6,9 +6,6 @@ end
 Then('I should see remove, add and edit buttons above the tables') do
   find_add_remove_edit_buttons
 end
-Then('I should see {string} name') do |name|
-  check_templates_data_src_name(name)
-end
-Then('I should see {string} source') do |source|
-  check_templates_data_src_src(source)
+Then(/^I should see '([^"]*)' name and '([^"]*)' source$/) do |name, source|
+  check_templates_data_src(name, source)
 end

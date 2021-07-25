@@ -16,17 +16,11 @@ end
 Then('I should see {string} value in graph def table') do |value|
   check_subcomp_templ_graph_def(value)
 end
-Then('I should see {string} name in data source table') do |name|
-  check_subc_templ_data_src_name(name)
+Then('I should see {string} name and {string} source in data source table') do |name, source|
+  check_subc_templ_data_src(name, source)
 end
-Then('I should see {string} source in data source table') do |source|
-  check_subc_templ_data_src_src(source)
-end
-Then('I should see {string} name in thresholds table') do |name|
-  check_sub_templ_trh_name(name)
-end
-Then('I should see {string} maxval in thresholds table') do |maxval|
-  check_sub_templ_trh_max(maxval)
+Then('I should see {string} name and {string} maxval in thresholds table') do |name, maxval|
+  check_sub_templ_trh(name, maxval)
 end
 When('I click on dependencies button') do
   click_dependencies_btn

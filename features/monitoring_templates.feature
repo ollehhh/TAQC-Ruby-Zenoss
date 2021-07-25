@@ -13,16 +13,11 @@ Feature: I verify device monitoring templates
     And I should see 'Memory Utilization' value in graph definition table
     And I should see 'Memory Usage' value in graph definition table
     And I should see 'IO Throughput' value in graph definition table
-    And I should see 'cpu' name
-    And I should see '/usr/bin/env cat /proc/stat over SSH' source
-    And I should see 'io' name
-    And I should see '/usr/bin/env cat /proc/diskstats over SSH' source
-    And I should see 'mem' name
-    And I should see '/usr/bin/env cat /proc/meminfo over SSH' source
-    And I should see 'ssh' name
-    And I should see '/usr/bin/env echo TEST over SSH' source
-    And I should see 'uptime' name
-    And I should see '/usr/bin/env uptime over SSH' source
+    And I should see 'cpu' name and '/usr/bin/env cat /proc/stat over SSH' source
+    And I should see 'io' name and '/usr/bin/env cat /proc/diskstats over SSH' source
+    And I should see 'mem' name and '/usr/bin/env cat /proc/meminfo over SSH' source
+    And I should see 'ssh' name and '/usr/bin/env echo TEST over SSH' source
+    And I should see 'uptime' name and '/usr/bin/env uptime over SSH' source
     And I should see remove, add and edit buttons above the tables
 
   @monitoring_templates @device2
@@ -34,14 +29,9 @@ Feature: I verify device monitoring templates
     And I should see 'Memory Utilization' value in graph definition table
     And I should see 'Memory Usage' value in graph definition table
     And I should see 'IO Throughput' value in graph definition table
-    And I should see 'cpu' name
-    And I should see '/usr/bin/env cat /proc/stat over SSH' source
-    And I should see 'io' name
-    And I should see '/usr/bin/env cat /proc/diskstats over SSH' source
-    And I should see 'mem' name
-    And I should see '/usr/bin/env cat /proc/meminfo over SSH' source
-    And I should see 'ssh' name
-    And I should see '/usr/bin/env echo TEST over SSH' source
-    And I should see 'uptime' name
-    And I should see '/usr/bin/env uptime over SSH' source
+    And I should see 'cpu' name and '/usr/bin/env cat /proc/stat over SSH' source
+    And I should see 'io' name and '/usr/bin/env cat /proc/diskstats over SSH' source
+    And I should see 'mem' name and '/usr/bin/env cat /proc/meminfo over SSH' source
+    And I should see 'ssh' name and '/usr/bin/env echo TEST over SSH' source
+    And I should see 'uptime' name and '/usr/bin/env uptime over SSH' source
     And I should see remove, add and edit buttons above the tables

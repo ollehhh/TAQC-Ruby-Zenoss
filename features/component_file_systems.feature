@@ -43,12 +43,9 @@ Feature: I verify the data collected for 'File Systems' component
     And I should see 'Usage' value in graph def table
     And I should see 'Inode Utilization' value in graph def table
     And I should see 'Inode Usage' value in graph def table
-    And I should see 'disk' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see 'idisk' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see '90 percent used' name in thresholds table
-    And I should see '90' maxval in thresholds table
+    And I should see 'disk' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see 'idisk' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see '90 percent used' name and '90' maxval in thresholds table
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
@@ -98,12 +95,9 @@ Feature: I verify the data collected for 'File Systems' component
     And I should see 'Usage' value in graph def table
     And I should see 'Inode Utilization' value in graph def table
     And I should see 'Inode Usage' value in graph def table
-    And I should see 'disk' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see 'idisk' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see '90 percent used' name in thresholds table
-    And I should see '90' maxval in thresholds table
+    And I should see 'disk' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see 'idisk' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see '90 percent used' name and '90' maxval in thresholds table
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table

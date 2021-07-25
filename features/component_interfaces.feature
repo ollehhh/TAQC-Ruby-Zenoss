@@ -37,10 +37,8 @@ Feature: I verify the data collected for 'Interfaces' component
     And I should see 'Data Throughput' value in graph def table
     And I should see 'Packet Throughput' value in graph def table
     And I should see 'Error Rate' value in graph def table
-    And I should see 'intf' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see '75 percent utilization' name in thresholds table
-    And I should see '(here.speed or 1e12) / 8 * .75' maxval in thresholds table
+    And I should see 'intf' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see '75 percent utilization' name and '(here.speed or 1e12) / 8 * .75' maxval in thresholds table
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
@@ -78,10 +76,8 @@ Feature: I verify the data collected for 'Interfaces' component
     And I should see 'Data Throughput' value in graph def table
     And I should see 'Packet Throughput' value in graph def table
     And I should see 'Error Rate' value in graph def table
-    And I should see 'intf' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see '75 percent utilization' name in thresholds table
-    And I should see '(here.speed or 1e12) / 8 * .75' maxval in thresholds table
+    And I should see 'intf' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see '75 percent utilization' name and '(here.speed or 1e12) / 8 * .75' maxval in thresholds table
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
