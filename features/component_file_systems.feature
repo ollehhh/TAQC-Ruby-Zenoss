@@ -1,11 +1,11 @@
 @component_file_systems @zenoss
-Feature: I verify 'File Systems' component
+Feature: I verify the data collected for 'File Systems' component
 
   Background:
     Given that the user is logged in
 
   @component_file_systems @device1
-  Scenario: Check values on 'File Systems' component page
+  Scenario: Check the data collected on 'File Systems' component page
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'File Systems ' subcomponent
     And I set '/boot' value in filter field
@@ -43,18 +43,15 @@ Feature: I verify 'File Systems' component
     And I should see 'Usage' value in graph def table
     And I should see 'Inode Utilization' value in graph def table
     And I should see 'Inode Usage' value in graph def table
-    And I should see 'disk' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see 'idisk' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see '90 percent used' name in thresholds table
-    And I should see '90' maxval in thresholds table
+    And I should see 'disk' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see 'idisk' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see '90 percent used' name and '90' maxval in thresholds table
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
 
   @component_file_systems @device2
-  Scenario: Check values on 'File Systems' component page
+  Scenario: Check the data collected on 'File Systems' component page
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'File Systems ' subcomponent
     And I set '/boot' value in filter field
@@ -98,12 +95,9 @@ Feature: I verify 'File Systems' component
     And I should see 'Usage' value in graph def table
     And I should see 'Inode Utilization' value in graph def table
     And I should see 'Inode Usage' value in graph def table
-    And I should see 'disk' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see 'idisk' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see '90 percent used' name in thresholds table
-    And I should see '90' maxval in thresholds table
+    And I should see 'disk' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see 'idisk' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see '90 percent used' name and '90' maxval in thresholds table
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table

@@ -1,5 +1,5 @@
 @modeler_plugins @zenoss
-Feature:I verify that correct plugins are selected for the device
+Feature:I verify that necessary plugins are selected for the device
 
   Background:
     Given that the user is logged in

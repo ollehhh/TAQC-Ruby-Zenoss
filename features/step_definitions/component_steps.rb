@@ -5,7 +5,7 @@ When('I go to {string} subcomponent') do |subcomponent|
 end
 When('I set {string} value in filter field') do |value|
   clear_filter
-  set_value_to_filter(value)
+  fill_filter_field(value)
 end
 When('I select {string} value from display drop down') do |value|
   get_val_from_displ_drop_down(value)
@@ -16,17 +16,11 @@ end
 Then('I should see {string} value in graph def table') do |value|
   check_subcomp_templ_graph_def(value)
 end
-Then('I should see {string} name in data source table') do |name|
-  check_subc_templ_data_src_name(name)
+Then('I should see {string} name and {string} source in data source table') do |name, source|
+  check_subc_templ_data_src(name, source)
 end
-Then('I should see {string} source in data source table') do |source|
-  check_subc_templ_data_src_src(source)
-end
-Then('I should see {string} name in thresholds table') do |name|
-  check_sub_templ_trh_name(name)
-end
-Then('I should see {string} maxval in thresholds table') do |maxval|
-  check_sub_templ_trh_max(maxval)
+Then('I should see {string} name and {string} maxval in thresholds table') do |name, maxval|
+  check_sub_templ_trh(name, maxval)
 end
 When('I click on dependencies button') do
   click_dependencies_btn
@@ -43,7 +37,3 @@ end
 Then('I should see event with {string} event class and {string} summary in events table') do |event_class, summary|
   check_event(event_class, summary)
 end
-
-
-
-

@@ -1,11 +1,11 @@
 @component_interfaces @zenoss
-Feature: I verify 'Interfaces' component
+Feature: I verify the data collected for 'Interfaces' component
 
   Background:
     Given that the user is logged in
 
-  @component_interfaces_device1
-  Scenario: Check values on 'Interfaces' component page
+  @component_interfaces @device1
+  Scenario: Check the data collected on 'Interfaces' component page
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'Interfaces' subcomponent
     And I set 'eth0' value in filter field
@@ -37,16 +37,14 @@ Feature: I verify 'Interfaces' component
     And I should see 'Data Throughput' value in graph def table
     And I should see 'Packet Throughput' value in graph def table
     And I should see 'Error Rate' value in graph def table
-    And I should see 'intf' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see '75 percent utilization' name in thresholds table
-    And I should see '(here.speed or 1e12) / 8 * .75' maxval in thresholds table
+    And I should see 'intf' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see '75 percent utilization' name and '(here.speed or 1e12) / 8 * .75' maxval in thresholds table
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
 
-  @component_interfaces_device2
-  Scenario: Check values on 'Interfaces' component page
+  @component_interfaces @device2
+  Scenario: Check the data collected on 'Interfaces' component page
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'Interfaces' subcomponent
     And I set 'eth0' value in filter field
@@ -78,10 +76,8 @@ Feature: I verify 'Interfaces' component
     And I should see 'Data Throughput' value in graph def table
     And I should see 'Packet Throughput' value in graph def table
     And I should see 'Error Rate' value in graph def table
-    And I should see 'intf' name in data source table
-    And I should see '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
-    And I should see '75 percent utilization' name in thresholds table
-    And I should see '(here.speed or 1e12) / 8 * .75' maxval in thresholds table
+    And I should see 'intf' name and '/bin:/sbin:/usr/bin:/usr/sbin' source in data source table
+    And I should see '75 percent utilization' name and '(here.speed or 1e12) / 8 * .75' maxval in thresholds table
     When I select 'Dependencies' value from display drop down
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
