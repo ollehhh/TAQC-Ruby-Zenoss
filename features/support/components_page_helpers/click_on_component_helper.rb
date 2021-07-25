@@ -10,9 +10,9 @@ module ClickOnComponentHelper
   def click_on_graphs
     find('#deviceDetailNav-body tr td', text: 'Graphs', exact_text: true).click
   end
+
   def click_on_component_graphs
     find('#deviceDetailNav-body tr td', text: 'Component Graphs', exact_text: true).click
   end
 end
 World(ClickOnComponentHelper)
-

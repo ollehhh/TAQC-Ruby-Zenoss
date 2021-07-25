@@ -7,11 +7,11 @@ module ComponentsPageHelpers
     @components_page.find("input[id='component_searchfield-inputEl']").set ''
   end
 
-  def set_value_to_filter(value)
+  def fill_filter_field(value)
     @components_page = ComponentsPage.new
-    @components_page.find("input[id='component_searchfield-inputEl']").set "#{value}"
+    @components_page.find("input[id='component_searchfield-inputEl']").set value
     page.driver.browser.action.send_keys(:enter).perform
-    @components_page.find(:xpath, ".//tr[contains(.,'#{value}')]//td[1]", :match => :first).click
+    @components_page.find(:xpath, ".//tr[contains(.,'#{value}')]//td[1]", match: :first).click
   end
 
   def compare_values_in_two_sections(value_title, column_number)

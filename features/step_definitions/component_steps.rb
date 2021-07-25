@@ -5,7 +5,7 @@ When('I go to {string} subcomponent') do |subcomponent|
 end
 When('I set {string} value in filter field') do |value|
   clear_filter
-  set_value_to_filter(value)
+  fill_filter_field(value)
 end
 When('I select {string} value from display drop down') do |value|
   get_val_from_displ_drop_down(value)
@@ -43,7 +43,3 @@ end
 Then('I should see event with {string} event class and {string} summary in events table') do |event_class, summary|
   check_event(event_class, summary)
 end
-
-
-
-

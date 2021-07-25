@@ -12,6 +12,3 @@ end
 Then('I should see {string} source') do |source|
   check_templates_data_src_src(source)
 end
-# Then('I should see {string} name and {string} source') do |name, source|
-#   check_templates_data_src(name, source)
-# end

@@ -1,11 +1,11 @@
 @component_ip_services @zenoss
-Feature: I verify 'IP Services' component
+Feature: I verify the data collected for 'IP Services' component
 
   Background:
     Given that the user is logged in
 
-  @component_ip_services_device1
-  Scenario: Check values on 'IP Services' component page
+  @component_ip_services @device1
+  Scenario: Check the data collected on 'IP Services' component page
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'IP Services ' subcomponent
     And I set 'ssh' value in filter field
@@ -31,8 +31,8 @@ Feature: I verify 'IP Services' component
     And I click on dependencies button
     Then I should see 'Devices' dependent in dependencies table
 
-  @component_ip_services_device2
-  Scenario: Check values on 'IP Services' component page
+  @component_ip_services @device2
+  Scenario: Check the data collected on 'IP Services' component page
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'IP Services ' subcomponent
     And I set 'snmp' value in filter field

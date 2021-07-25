@@ -15,7 +15,3 @@ end
 Then('I should see save and cancel buttons') do
   find_save_cancel_buttons
 end
-
-
-
-

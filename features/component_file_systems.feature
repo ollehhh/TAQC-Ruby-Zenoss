@@ -1,11 +1,11 @@
 @component_file_systems @zenoss
-Feature: I verify 'File Systems' component
+Feature: I verify the data collected for 'File Systems' component
 
   Background:
     Given that the user is logged in
 
   @component_file_systems @device1
-  Scenario: Check values on 'File Systems' component page
+  Scenario: Check the data collected on 'File Systems' component page
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'File Systems ' subcomponent
     And I set '/boot' value in filter field
@@ -54,7 +54,7 @@ Feature: I verify 'File Systems' component
     Then I should see 'Devices' dependent in dependencies table
 
   @component_file_systems @device2
-  Scenario: Check values on 'File Systems' component page
+  Scenario: Check the data collected on 'File Systems' component page
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'File Systems ' subcomponent
     And I set '/boot' value in filter field

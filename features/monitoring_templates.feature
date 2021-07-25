@@ -5,7 +5,7 @@ Feature: I verify device monitoring templates
     Given that the user is logged in
 
   @monitoring_templates @device1
-  Scenario: Check values in graph definition table
+  Scenario: Check device monitoring templates
     When I set fields filter 'qa-ubuntu-11.zenoss.lab', '10.88.120.109', '/Server/SSH/Linux' and click on device
     And I go to 'Device (/Server/SSH/Linux)' component
     Then I should see 'CPU Utilization' value in graph definition table
@@ -26,7 +26,7 @@ Feature: I verify device monitoring templates
     And I should see remove, add and edit buttons above the tables
 
   @monitoring_templates @device2
-  Scenario: Check values in graph definition table
+  Scenario: Check device monitoring templates
     When I set fields filter 'qa-ubuntu-12.zenoss.lab', '10.88.120.110', '/Server/SSH/Linux' and click on device
     And I go to 'Device (/Server/SSH/Linux)' component
     Then I should see 'CPU Utilization' value in graph definition table
