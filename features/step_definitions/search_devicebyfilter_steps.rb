@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 When('I set fields filter {string}, {string}, {string} and click on device') do |device_name, ip_address, device_class|
   clear_filters
   search_filter device_name, ip_address, device_class

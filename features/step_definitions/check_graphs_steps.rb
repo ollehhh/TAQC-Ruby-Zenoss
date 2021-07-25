@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 When('I click graphs component') do
   click_on_graphs
 end
+
 When('I should see name graph {string}') do |name_graph|
   name_graphs name_graph
 end
