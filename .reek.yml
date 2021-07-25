@@ -21,4 +21,4 @@ detectors:
   TooManyInstanceVariables:
     max_instance_variables: 10
   DuplicateMethodCall:
-    max_calls: 3
+    max_calls: 2
