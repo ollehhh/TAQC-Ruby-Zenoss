@@ -21,6 +21,6 @@ detectors:
   TooManyInstanceVariables:
     max_instance_variables: 10
   DuplicateMethodCall :
-    max_calls : 3
+    max_calls : 5
   NestedIterators:
-    max_allowed_nesting : 2
+    max_allowed_nesting : 5

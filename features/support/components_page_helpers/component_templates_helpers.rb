@@ -20,6 +20,12 @@ module ComponentTemplatesHelpers
     expect(@components_page.subcomp_templates.subcomp_thresholds).to have_content maxval
   end
 
+  def check_sub_templ_trh2(name, minval)
+    @components_page = ComponentsPage.new
+    expect(@components_page.subcomp_templates.subcomp_thresholds).to have_content name
+    expect(@components_page.subcomp_templates.subcomp_thresholds).to have_content minval
+  end
+
   def check_subcomp_templ_graph_def(value)
     @components_page = ComponentsPage.new
     begin

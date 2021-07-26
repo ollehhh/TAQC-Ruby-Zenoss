@@ -22,6 +22,11 @@ end
 Then('I should see {string} name and {string} maxval in thresholds table') do |name, maxval|
   check_sub_templ_trh(name, maxval)
 end
+
+Then('I should see {string} name and {string} minval in thresholds table') do |name, minval|
+  check_sub_templ_trh2(name, minval)
+end
+
 When('I click on dependencies button') do
   click_dependencies_btn
 end
